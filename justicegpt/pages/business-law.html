@@ -77,6 +77,7 @@
                         required />
                     <button class="send" type="submit">Send</button>
                 </form>
+                <button id="speak-button"><img src="../images/speak.png" alt="speakButton"></button>
             </div>
         </div>
     </section>
@@ -99,7 +100,7 @@
             document.getElementsByClassName("input").classList.add("disabled");
         });
 
-
+        // speech-to-text
         if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             const recognition = new SpeechRecognition();
