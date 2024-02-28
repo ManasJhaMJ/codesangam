@@ -52,6 +52,10 @@
             <textarea class="input" autocomplete="on" id="description" name="description"
                 placeholder="Enter a detailed description of your case. Mention how it started and how its affecting you."
                 required></textarea>
+            <button id="startButton">
+                <img src="../images/mic.png" alt="mic" />
+                <p>Enable Voice</p>
+            </button>
             <br />
             <label for="criminal-history">Criminal History (if any) :</label><br />
             <textarea class="input" autocomplete="on" id="criminal_history" name="criminal-history"
@@ -77,10 +81,11 @@
         </div>
     </section>
 
-    <input type="button" value="Generate PDF" onclick="generatePDF()" />
-
-    <button id="startButton">Start</button>
-    <textarea id="transcription" rows="5" cols="50"></textarea>
+    <!-- <input id="pdfgen" type="button" value="generatePDF" onclick="generatePDF()" /> -->
+    <button id="pdfgen" onclick="generatePDF()">
+        <img src="../images/pdfgen.png" alt="pdfGen">
+        <p>Generate PDF</p>
+    </button>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
@@ -95,21 +100,31 @@
         });
 
 
-        const startButton = document.getElementById('startButton');
-        const transcription = document.getElementById('transcription');
-        let recognition = new webkitSpeechRecognition(); // Initialize speech recognition
+        if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
 
-        recognition.continuous = true; // Enable continuous recognition
-        recognition.lang = 'en-US'; // Set language (you can change it to any supported language)
+            recognition.continuous = true; // Enable continuous recognition
+            recognition.lang = 'en-US'; // Set language (you can change it to any supported language)
 
-        startButton.addEventListener('click', function () {
-            recognition.start(); // Start speech recognition when the button is clicked
-        });
+            const startButton = document.getElementById('startButton');
+            const transcription = document.getElementById('description');
 
-        recognition.onresult = function (event) {
-            const transcript = event.results[event.results.length - 1][0].transcript; // Get the latest transcript
-            transcription.value += transcript; // Append the transcript to the textarea
-        };
+            startButton.addEventListener('click', function () {
+                recognition.start(); // Start speech recognition when the button is clicked
+            });
+
+            recognition.onresult = function (event) {
+                const transcript = event.results[event.results.length - 1][0].transcript; // Get the latest transcript
+                transcription.value += transcript + '\n'; // Append the transcript to the textarea
+            };
+
+            recognition.onerror = function (event) {
+                console.error('Error:', event.error);
+            };
+        } else {
+            console.error('Speech recognition not supported');
+        }
     </script>
 
 </body>
