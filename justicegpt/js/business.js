@@ -82,10 +82,10 @@ readButton.addEventListener('click', function () {
 function generatePDF() {
 
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({ orientation: 'landscape' });
+    const doc = new jsPDF({ orientation: 'portrait' });
     doc.setFontSize(25);
     doc.setFont('helvetica', 'bold');
-    doc.text(120, 20, "Legal Advice");
+    doc.text(73, 20, "Legal Advice");
     doc.setFontSize(17);
     doc.setFont('helvetica', 'normal');
     doc.text(5, 40, "Name: " + username.value);
@@ -94,7 +94,8 @@ function generatePDF() {
     doc.text(5, 70, "Summary: " + summary.value);
     doc.text(5, 80, "Description: " + description.value);
     doc.text(5, 90, "Criminal History: " + criminal_history.value);
-    doc.setFontSize(12);
-    doc.text(1, 110, "Bot Advice: " + chatbotResponse);
+    doc.setFontSize(15);
+    // var splitTitle = doc.splitTextToSize(chatbotResponse, 130);
+    doc.text(1, 110, "Bot Advice: " + chatbotResponse, { maxWidth: 200 });
     doc.save("legal-advice.pdf");
 }
