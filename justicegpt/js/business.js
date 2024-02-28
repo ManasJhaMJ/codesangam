@@ -96,6 +96,6 @@ function generatePDF() {
     doc.text(5, 90, "Criminal History: " + criminal_history.value);
     doc.setFontSize(15);
     // var splitTitle = doc.splitTextToSize(chatbotResponse, 130);
-    doc.text(1, 110, "Bot Advice: " + chatbotResponse, { maxWidth: 200 });
+    doc.text(5, 110, "Bot Advice: " + chatbotResponse, { maxWidth: 200 });
     doc.save("legal-advice.pdf");
 }
