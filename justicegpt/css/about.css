@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    font-size: 10px;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dcccde;
+    background-image: url("../images/bg.png");
+    /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: hidden; */
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -user-drag: none;
+}
+
+nav {
+    background-color: #403042;
+    height: 9.5rem;
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cs_logo {
+    width: auto;
+    height: 8.5rem;
+    margin-left: 4rem;
+}
+
+.mr_logo {
+    width: auto;
+    height: 8rem;
+    margin-right: 4rem;
+}
+
+.nav_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_links a {
+    font-family: "Ihana Perkele Alaston", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#home {
+    margin: 15rem 5rem;
+    width: 100%;
+}
+
+#home h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    color: #403042;
+    text-align: center;
+    margin: 0;
+}
+
+.justice {
+    color: #403042;
+}
+
+#home h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    color: #403042;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+    background-color: #403042;
+    animation: fadeinout 3s linear forwards;
+}
+
+@keyframes fadeinout {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+} */
+
+@media only screen and (max-width: 600px) {
+    .remove {
+        display: none;
+    }
+
+    nav {
+        height: 10rem;
+        width: 100%;
+    }
+}
