@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Justice GPT Business Law helper</title>
-
     <!-- CSS -->
     <link rel="stylesheet" href="../css/business.css" />
 </head>
@@ -34,28 +33,28 @@
         <h2>Submit Case Details</h2>
         <div class="container">
             <label for="name">Name:</label><br />
-            <input class="input" autocomplete="off" type="text" id="name" name="name"
+            <input class="input" autocomplete="on" type="text" id="name" name="name"
                 placeholder="Enter your legal name." required />
             <br />
             <label for="email">Email:</label><br />
-            <input class="input" autocomplete="off" type="email" id="email" name="email"
+            <input class="input" autocomplete="on" type="email" id="email" name="email"
                 placeholder="Enter your legal mail." required />
             <br />
             <label for="age">Age:</label><br />
-            <input class="input" autocomplete="off" type="number" id="age" name="age"
+            <input class="input" autocomplete="on" type="number" id="age" name="age"
                 placeholder="Enter age according to legal records." required />
             <br />
             <label for="summary">Summary:</label><br />
-            <textarea class="input" autocomplete="off" id="summary" name="summary"
+            <textarea class="input" autocomplete="on" id="summary" name="summary"
                 placeholder="Enter a brief summary of your case." required></textarea>
             <br />
             <label for="description">Description:</label><br />
-            <textarea class="input" autocomplete="off" id="description" name="description"
+            <textarea class="input" autocomplete="on" id="description" name="description"
                 placeholder="Enter a detailed description of your case. Mention how it started and how its affecting you."
                 required></textarea>
             <br />
             <label for="criminal-history">Criminal History (if any) :</label><br />
-            <textarea class="input" autocomplete="off" id="criminal_history" name="criminal-history"
+            <textarea class="input" autocomplete="on" id="criminal_history" name="criminal-history"
                 placeholder="Enter your criminal history (if any)."></textarea>
             <br /><br />
         </div>
@@ -63,6 +62,55 @@
     <div class="save-grp">
         <a href="#chat"><button id="cta-btn">Submit</button></a>
     </div>
+
+    <section id="chat">
+        <div id="chat-window">
+            <div class="chat-window">
+                <div class="main-title">Justice GPT</div>
+                <div id="chat-messages"></div>
+                <form id="chat-form">
+                    <input type="text" id="chat-input" autocomplete="off" placeholder="Start chat by saying Help!"
+                        required />
+                    <button class="send" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <input type="button" value="Generate PDF" onclick="generatePDF()" />
+
+    <button id="startButton">Start</button>
+    <textarea id="transcription" rows="5" cols="50"></textarea>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
+    <!-- jspdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <script src="../js/business.js"></script>
+    <script>
+        document.getElementById("cta-btn").click(function () {
+            document.getElementsByClassName("input").classList.add("disabled");
+        });
+
+
+        const startButton = document.getElementById('startButton');
+        const transcription = document.getElementById('transcription');
+        let recognition = new webkitSpeechRecognition(); // Initialize speech recognition
+
+        recognition.continuous = true; // Enable continuous recognition
+        recognition.lang = 'en-US'; // Set language (you can change it to any supported language)
+
+        startButton.addEventListener('click', function () {
+            recognition.start(); // Start speech recognition when the button is clicked
+        });
+
+        recognition.onresult = function (event) {
+            const transcript = event.results[event.results.length - 1][0].transcript; // Get the latest transcript
+            transcription.value += transcript; // Append the transcript to the textarea
+        };
+    </script>
 
 </body>
 
