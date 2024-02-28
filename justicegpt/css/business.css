@@ -1,4 +1,5 @@
 @import url(https://db.onlinewebfonts.com/c/15a7d1d71610b5082933b2955bb8bc2e?family=Ihana+Perkele+Alaston);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     font-size: 10px;
@@ -13,12 +14,17 @@ html {
 body {
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
     background-color: #dcccde;
     background-image: url("../images/bg.png");
     /* background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     overflow-y: hidden; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 img {
@@ -26,7 +32,6 @@ img {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
 }
 
 nav {
@@ -80,6 +85,15 @@ nav {
     border: #403042 solid 1px;
 }
 
+.main-title {
+    font-family: "Ihana Perkele Alaston", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #dcccde;
+}
+
 .splash-screen {
     position: fixed;
     width: 100%;
@@ -114,8 +128,9 @@ nav {
 
 .form {
     color: white;
-    border-radius: 30px;
-    margin: 150px 300px 20px 300px;
+    border-radius: 7px;
+    width: 70%;
+    margin: 15rem;
     padding: 30px 100px;
     background-color: #403042;
 }
@@ -165,17 +180,134 @@ textarea {
     margin-right: 4rem;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
-    #chat-window {
-        width: 90%;
-    }
+/* ---------Chat Window----------- */
+
+#chat {
+    width: 100%;
 }
 
-.main-title {
-    font-family: "Ihana Perkele Alaston", sans-serif;
+.chat-window {
+    width: 80%;
+    margin: 160px auto;
+    background-color: #403042;
+    border: #dcccde solid 3px;
+    padding: 20px;
+    border-radius: 22px;
+    margin: 150px auto 50px auto;
+}
+
+#chat-messages {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dcccde;
+    height: calc(80vh - 200px);
+    max-height: calc(100vh - 200px);
+    overflow: auto;
+}
+
+#chat-form {
+    display: flex;
+    align-items: center;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #dcccde;
+    background-color: #dcccde;
+}
+
+.send[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #dcccde;
+    color: #000;
+    border: none;
     font-size: 2rem;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #dcccde;
+    font-weight: bold;
+}
+
+.send:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
+}
+
+.bot-message {
+    color: white;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    border: #dcccde solid 1px;
+    text-align: justify;
+    /* keep it right-aligned */
+    padding: 15px;
+    /* added padding */
+    margin-top: 10px;
+    /* added margin-top to create a gap */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
+.user-message {
+    color: white;
+    font-size: 2rem;
+    font-family: "Nunito", sans-serif;
+    background-color: black;
+    border: #dcccde solid 1px;
+    text-align: left;
+    /* changed text align to left */
+    padding: 15px;
+    /* added padding */
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
+.user-message img,
+.bot-message img {
+    width: 40px;
+    /* adjust the width of the icon */
+    height: 40px;
+    /* adjust the height of the icon */
+    margin-right: 20px;
+    /* add some margin to separate the icon from the message */
+    background-color: white;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+    .form {
+        margin: 150px 200px 50px 200px;
+        padding: 10px 30px;
+        width: 80%;
+    }
+
+    .form input,
+    textarea {
+        width: 80%;
+        height: 30px;
+    }
+
+    #chat {
+        width: 100%;
+    }
+
+    .main-title {
+        font-family: "Ihana Perkele Alaston", sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #dcccde;
+    }
+
+    .remove {
+        display: none;
+    }
 }
