@@ -172,6 +172,33 @@ nav {
     color: #403042;
 }
 
+#speak-button {
+    background-color: #403042;
+    color: white;
+    font-family: "Akrobat", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #dcccde solid 1px;
+    transition: all 0.1s ease-in;
+}
+
+#speak-button img {
+    width: 2.5rem;
+    height: auto;
+    padding: 4px;
+    border-radius: 2px;
+}
+
 @keyframes fadeinout {
     0% {
         opacity: 1;
