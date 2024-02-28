@@ -182,7 +182,7 @@ nav {
     line-height: normal;
     text-transform: uppercase;
     padding: 1rem;
-    margin: 0 1rem;
+    margin: 1rem 1rem 0 0;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -192,11 +192,18 @@ nav {
     transition: all 0.1s ease-in;
 }
 
+#speak-button:hover {
+    background-color: #dcccde;
+    color: #403042;
+}
+
 #speak-button img {
     width: 2.5rem;
     height: auto;
     padding: 4px;
+    margin-right: 0.5rem;
     border-radius: 2px;
+    background-color: #403042;
 }
 
 @keyframes fadeinout {
@@ -374,6 +381,70 @@ textarea {
 }
 
 
+/* ---------reference----------- */
+#reference {
+    width: 80%;
+    margin: 10rem auto;
+    padding: 0 100px;
+    background-color: #403042;
+    border: #dcccde solid 3px;
+    border-radius: 22px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card {
+    background-color: #dcccde;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    margin: 2rem;
+    text-align: center;
+    transition: all 0.2s ease-in;
+}
+
+.card p {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    margin: 2rem 0;
+}
+
+.card button {
+    background-color: #403042;
+    color: white;
+    font-family: "Akrobat", sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.card button:hover {
+    background-color: #5f4b5f;
+}
+
+.card img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+}
+
 @media only screen and (min-width: 0px) and (max-width: 768px) {
     .form {
         margin: 150px 200px 50px 200px;
@@ -402,5 +473,22 @@ textarea {
 
     .remove {
         display: none;
+    }
+
+    .container2 {
+        flex-direction: column;
+    }
+
+    #reference {
+        width: 90%;
+        margin: 5rem 0;
+        padding: 0 10px;
+        background-color: #403042;
+        border: #dcccde solid 3px;
+        border-radius: 22px;
+    }
+
+    .card {
+        width: 80%;
     }
 }
