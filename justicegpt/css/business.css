@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
 }
 
 img {
@@ -104,6 +104,72 @@ nav {
     z-index: 101;
     background-color: #403042;
     animation: fadeinout 3s linear forwards;
+}
+
+#startButton {
+    background-color: #403042;
+    color: white;
+    font-family: "Akrobat", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #dcccde solid 1px;
+    transition: all 0.1s ease-in;
+}
+
+#startButton img {
+    width: 2rem;
+    height: auto;
+    margin-right: 1rem;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: #dcccde;
+}
+
+#startButton:hover {
+    background-color: #dcccde;
+    color: #403042;
+}
+
+#pdfgen {
+    background-color: #403042;
+    color: white;
+    font-family: "Akrobat", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #dcccde solid 1px;
+    transition: all 0.1s ease-in;
+}
+
+#pdfgen img {
+    width: 2rem;
+    height: auto;
+    margin-right: 1rem;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: #dcccde;
+}
+
+#pdfgen:hover {
+    background-color: #ffffff;
+    color: #403042;
 }
 
 @keyframes fadeinout {
