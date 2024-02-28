@@ -391,6 +391,20 @@ textarea {
     border-radius: 22px;
 }
 
+#reference h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 1rem 0;
+    color: #dcccde;
+}
+
+#reference p {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    color: #dcccde;
+}
+
 .container2 {
     display: flex;
     justify-content: center;
@@ -399,6 +413,7 @@ textarea {
 }
 
 .card {
+    width: 30%;
     background-color: #dcccde;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -409,9 +424,10 @@ textarea {
 }
 
 .card p {
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
-    margin: 2rem 0;
+    color: #403042 !important;
+    font-size: 1.3rem !important;
+    letter-spacing: 0.1rem !important;
+    margin: 2rem 0 !important;
 }
 
 .card button {
