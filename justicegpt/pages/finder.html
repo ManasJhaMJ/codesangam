@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Justice GPT Business Law helper</title>
+    <title>Justice GPT All Legal Law helper</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/business.css" />
 </head>
@@ -29,38 +29,39 @@
     </nav>
 
     <form class="form">
-        <h1>Business Law</h1>
-        <h2>Submit Case Details</h2>
+        <h1>Resource Finder</h1>
+        <h2>Submit Query Here</h2>
         <div class="container">
             <label for="name">Name:</label><br />
             <input class="input" autocomplete="on" type="text" id="name" name="name"
                 placeholder="Enter your legal name." required />
             <br />
-            <label for="email">Email:</label><br />
+            <!-- <label for="email">Email:</label><br />
             <input class="input" autocomplete="on" type="email" id="email" name="email"
                 placeholder="Enter your legal mail." required />
-            <br />
+            <br /> -->
             <label for="age">Age:</label><br />
             <input class="input" autocomplete="on" type="number" id="age" name="age"
                 placeholder="Enter age according to legal records." required />
             <br />
-            <label for="summary">Summary:</label><br />
-            <textarea class="input" autocomplete="on" id="summary" name="summary"
-                placeholder="Enter a brief summary of your case." required></textarea>
+            <label for="summary">Query:</label><br />
+            <textarea class="input" autocomplete="on" id="summary" name="summary" placeholder="Enter your Query here."
+                required></textarea>
             <br />
-            <label for="description">Description:</label><br />
+            <!-- <label for="description">Description:</label><br />
             <textarea class="input" autocomplete="on" id="description" name="description"
                 placeholder="Enter a detailed description of your case. Mention how it started and how its affecting you."
-                required></textarea>
+                required></textarea> -->
             <button id="startButton">
                 <img src="../images/mic.png" alt="mic" />
                 <p>Enable Voice</p>
             </button>
             <br />
-            <label for="criminal-history">Criminal History (if any) :</label><br />
+            <!-- <label for="criminal-history">Criminal History (if any) :</label><br />
             <textarea class="input" autocomplete="on" id="criminal_history" name="criminal-history"
                 placeholder="Enter your criminal history (if any)."></textarea>
-            <br /><br />
+            <br /> -->
+            <br />
         </div>
     </form>
     <div class="save-grp">
@@ -97,7 +98,7 @@
         <h1>Consult Lawyers</h1>
         <p>
             If you are not satisfied with the AI's response, you can consult a lawyer. Here are some of the best lawyers
-            in the business law domain.
+            in the legal law domain.
         </p>
         <div class="container2">
             <div class="card">
@@ -105,7 +106,7 @@
                     alt="arjun Khanna">
                 <h2>Arjun Khanna</h2>
                 <p>
-                    Arjun Khanna is a lawyer with 10 years of experience in business law. He has worked with various
+                    Arjun Khanna is a lawyer with 10 years of experience in Legal laws. He has worked with various
                     companies and has a good understanding of the legalities involved in business.
                 </p>
                 <p>Contact: arjunkhanna112@outlook.com</p>
@@ -116,7 +117,7 @@
                     alt="Priya Sharma">
                 <h2>Priya Sharma</h2>
                 <p>
-                    Priya Sharma is a lawyer with 7 years of experience in business law. She has worked with various
+                    Priya Sharma is a lawyer with 7 years of experience in legal laws. She has worked with various
                     medium scale businesses and is well versed with the legalities involved in business.
                 </p>
                 <p>Contact: priya43sharma@gmail.com</p>
@@ -129,7 +130,6 @@
                 <p>
                     Vikram Singh is a lawyer with 3 years of experience in Corporate law. He is relatively new to the
                     field but is well respected and skilled.
-
                 </p>
                 <p>Contact: vikramsingh203@gmail.com</p>
                 <a href="mailto:vikramsingh203@gmail.com"><button>Connect</button></a>
@@ -142,7 +142,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 
-    <script src="../js/business.js"></script>
+    <script src="../js/finder.js"></script>
     <script>
         document.getElementById("cta-btn").click(function () {
             document.getElementsByClassName("input").classList.add("disabled");
@@ -157,7 +157,7 @@
             recognition.lang = 'en-US'; // Set language (you can change it to any supported language)
 
             const startButton = document.getElementById('startButton');
-            const transcription = document.getElementById('description');
+            const transcription = document.getElementById('summary');
 
             startButton.addEventListener('click', function () {
                 recognition.start(); // Start speech recognition when the button is clicked
