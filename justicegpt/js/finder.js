@@ -84,7 +84,7 @@ function generatePDF() {
     doc.setFont('helvetica', 'normal');
     doc.text(5, 40, "Name: " + username.value);
     doc.text(5, 60, "Age: " + age.value);
-    doc.text(5, 70, "Summary: " + summary.value);
+    doc.text(5, 70, "Summary: " + summary.value, { maxWidth: 200 });
     doc.setFontSize(15);
     // var splitTitle = doc.splitTextToSize(chatbotResponse, 130);
     doc.text(5, 110, "Bot Advice: " + chatbotResponse, { maxWidth: 200 });

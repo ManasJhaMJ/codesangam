@@ -92,7 +92,7 @@ function generatePDF() {
     doc.text(5, 50, "Email: " + email.value);
     doc.text(5, 60, "Age: " + age.value);
     doc.text(5, 70, "Summary: " + summary.value);
-    doc.text(5, 80, "Description: " + description.value);
+    doc.text(5, 80, "Description: " + description.value, { maxWidth: 200 });
     doc.text(5, 90, "Criminal History: " + criminal_history.value);
     doc.setFontSize(15);
     // var splitTitle = doc.splitTextToSize(chatbotResponse, 130);
